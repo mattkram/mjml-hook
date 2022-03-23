@@ -5,10 +5,10 @@
 // and then runs `mjml filename.mjml -o filename.html` in a
 // subprocess.
 
-const spawn = require('child_process').spawn;
+import {spawn} from 'child_process';
 
 // The first two arguments are node and then mjml_hook
-templates = process.argv.slice(2);
+const templates = process.argv.slice(2);
 
 for (const template of templates) {
   console.log('Input file: ', template);
