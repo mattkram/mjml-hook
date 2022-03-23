@@ -1,0 +1,8 @@
+-   id: mjml
+    name: mjml
+    description: 'Convert MJML email templates to HTML'
+    entry: mjml_hook
+    language: node
+    additional_dependencies: ["mjml@4.12.0"]
+    minimum_pre_commit_version: '0'
+    files: .*\.mjml

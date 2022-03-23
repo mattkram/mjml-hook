@@ -1,0 +1,11 @@
+{
+  "name": "mjml-hook",
+  "version": "0.1.0",
+  "description": "A wrapper around MJML CLI for use with pre-commit",
+  "main": "bin/mjml_hook",
+  "bin": {
+      "mjml_hook": "./bin/mjml_hook"
+  },
+  "author": "Matt Kramer <mkramer@anaconda.com>",
+  "license": "MIT"
+}
