@@ -15,10 +15,10 @@ for (const template of templates) {
 
     let output = template.replace('.mjml', '.html')
     console.log("Output file: ", output);
-   
-    // https://stackoverflow.com/a/16099450 
+
+    // https://stackoverflow.com/a/16099450
     let prc = spawn('mjml', ['-o', output, template]);
-    
+
     prc.stdout.setEncoding('utf8');
     prc.stdout.on('data', function (data) {
         let str = data.toString();
