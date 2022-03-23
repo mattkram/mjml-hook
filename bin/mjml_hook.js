@@ -5,28 +5,28 @@
 // and then runs `mjml filename.mjml -o filename.html` in a
 // subprocess.
 
-let spawn = require('child_process').spawn
+const spawn = require('child_process').spawn;
 
 // The first two arguments are node and then mjml_hook
 templates = process.argv.slice(2);
 
 for (const template of templates) {
-    console.log("Input file: ", template);
+  console.log('Input file: ', template);
 
-    let output = template.replace('.mjml', '.html')
-    console.log("Output file: ", output);
+  const output = template.replace('.mjml', '.html');
+  console.log('Output file: ', output);
 
-    // https://stackoverflow.com/a/16099450
-    let prc = spawn('mjml', ['-o', output, template]);
+  // https://stackoverflow.com/a/16099450
+  const prc = spawn('mjml', ['-o', output, template]);
 
-    prc.stdout.setEncoding('utf8');
-    prc.stdout.on('data', function (data) {
-        let str = data.toString();
-        let lines = str.split(/(\r?\n)/g);
-        console.log(lines.join(""));
-    });
+  prc.stdout.setEncoding('utf8');
+  prc.stdout.on('data', function(data) {
+    const str = data.toString();
+    const lines = str.split(/(\r?\n)/g);
+    console.log(lines.join(''));
+  });
 
-    prc.on('close', function (code) {
-        console.log('process exit code ' + code);
-    });
+  prc.on('close', function(code) {
+    console.log('process exit code ' + code);
+  });
 }
