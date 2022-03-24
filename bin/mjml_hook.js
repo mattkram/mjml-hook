@@ -13,7 +13,7 @@ const templates = process.argv.slice(2);
 
 for (const template of templates) {
   const output = template.replace('.mjml', '.html');
-  console.log('Rendering ', template, ' -> ', output);
+  console.log('Rendering', template, '->', output);
 
   // https://stackoverflow.com/a/16099450
   const prc = spawn('mjml', ['-o', output, template]);
