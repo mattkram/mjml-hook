@@ -12,10 +12,8 @@ import {spawn} from 'child_process';
 const templates = process.argv.slice(2);
 
 for (const template of templates) {
-  console.log('Input file: ', template);
-
   const output = template.replace('.mjml', '.html');
-  console.log('Output file: ', output);
+  console.log('Rendering ', template, ' -> ', output);
 
   // https://stackoverflow.com/a/16099450
   const prc = spawn('mjml', ['-o', output, template]);
